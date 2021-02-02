@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- compiled and minified CSS  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Tooltip -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css"/>
+    <!-- Import Google Icon Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>The CTL Challenge</title>
+</head>
+<body class = "grey darken-4">
+    
+    <div class="nav z-depth-0">
+        <div class="section center">
+            <h3 class="white-text center">- CTL Fitness Challenge -</h3>
+        </div>
+    </div>
+
+
+
+   <div class="container section"></div>
+        <div class="row container">
+            <div class="col s12 l6 push-l0.5">
+                <div class="canvas1"></div>
+            </div>
+            <div class="col s12 l6 pull-l0.5">
+                <div class="canvas2"></div>
+            </div>
+        </div>
+   </div>
+
+    <div class="section center">
+        <p class="grey-text flow-text">Select your team then add your steps daily steps</p>
+    </div>
+
+    <div class="container section">
+        <div class="row">
+            <!-- <div class="col s12 l5">
+                <button class="active" data-team="team_ranks">Team Ranks</button>
+            </div> -->
+            <div class="col s12 m6 l3">
+                <button class="active" data-team="Gryffindor">Gryffindor</button>
+            </div>
+            <div class="col s12 m6 l3">
+                <button data-team="Hufflepuff">Hufflepuff</button>
+            </div>
+            <div class="col s12 m6 l3">
+                <button data-team="Ravenclaw">Ravenclaw</button>
+            </div>
+            <div class="col s12 m6 l3">
+                <button data-team="Slytherin">Slytherin</button>
+            </div>
+        </div>
+            
+            
+
+        <div class="container">
+                <div class="row button-down">
+                    <div class="col s12 m6 push-m3 l6 push-l3">
+                        <form  >
+                            <p class="flow-text grey-text center">How many steps did you get today for <span>Gryffindor</span>?</p>
+                            <!-- Why is id = Hufflepuff -->
+                            <input type="text" class="grey-text" id="Gryffindor" placeholder="Number of steps" />
+                            <p class="center pink-text error text-lighten-1"></p>
+                        </form>       
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCM6O2V1FH3i4FM9HBtCJtHMz9QOPLVy04",
+        authDomain: "udemy-d3-firebase-47fdb.firebaseapp.com",
+        databaseURL: "https://udemy-d3-firebase-47fdb.firebaseio.com",
+        projectId: "udemy-d3-firebase-47fdb",
+        storageBucket: "udemy-d3-firebase-47fdb.appspot.com",
+        messagingSenderId: "920850624519",
+        appId: "1:920850624519:web:a70b2ff73b38d7340abaa2",
+        measurementId: "G-C3HGMRQF0X"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const settings = {timestampsInSnapshots: true};
+    db.settings(settings);
+    firebase.analytics();
+    </script>
+
+    
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+
+    <!-- Tooltip -->
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+
+    <!-- My Scripts -->
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+    <script src="bar.js"></script>
+</body>
+</html>
+
+<!-- TODO
+racing bar chart? 
+play button to animate line chart. 
+date selector
+-->
